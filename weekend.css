@@ -1,0 +1,26 @@
+.little {
+     background-color: aqua;
+}
+.medium {
+     background-color: yellowgreen;
+}
+.alot {
+     background-color: red;
+}
+.all {
+     background-color: springgreen;
+}
+.almost {
+     background-color: rgb(182, 205, 50);
+}
+.few {
+     background-color: tomato;
+}
+ table{
+     border: 1px solid black;
+}
+ td {
+     border: 1px solid black;
+     border-radius: 10px;
+     background-color: burlywood;
+ }
