@@ -70,3 +70,11 @@ let preCourse = [
             topic: "Objects" ,
      },
 ]
+
+for (day of preCourse) {
+     day.totalTime = ((day.finishedAt.getHours())-
+     (day.startAt.getHours()))
+     
+     day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100) + "%"
+     
+}
