@@ -82,6 +82,7 @@ for (let day of preCourse) {
      day.lastHours = day.finishedAt.getHours() + ":" + day.finishedAt.getMinutes();
      
 }
+
 const headsOfTable = ["Started at:", "Finished at:",
  "Total time spent:", "Task given:", "Task finished:", "Task finished % :", "Topic:" ];
      
@@ -90,13 +91,16 @@ const headsOfTable = ["Started at:", "Finished at:",
  for (let title of headsOfTable) {
       document.write(`<th class = "info" >  ${title} </th>`)
  }
- 
+
       for (let i = 0; i<preCourse.length; i++) {
-           document.write(`<tr><td> ${preCourse[i].startHours}
-           ${preCourse[i].lastHours} ${preCourse[i].totalTime}
-           ${preCourse[i].taskGiven} ${preCourse[i].taskFinished}
-           ${preCourse[i].taskFinishedPrecent} ${preCourse[i].topic} </td></tr>`)
-            }
-          
+           document.write(`<tr>
+           <td> ${preCourse[i].startHours} </td>
+           <td> ${preCourse[i].lastHours}</td>
+           <td> ${preCourse[i].totalTime} </td>
+           <td> ${preCourse[i].taskGiven}</td>
+           <td> ${preCourse[i].taskFinished} </td>
+           <td> ${preCourse[i].taskFinishedPrecent}</td>
+           <td> ${preCourse[i].topic} </td> </tr>`)
+          }        
 
  document.write(`</table>`)

@@ -16,8 +16,15 @@
 .few {
      background-color: tomato;
 }
-td{
+ td {
      border: 1px solid  black;
      border-radius: 10px;
+     background-color: cornflowerblue;
+}
+.info{
+     background-color: rgba(0, 174, 255, 0.068);
+     border: 1px solid black;
+     border-radius: 10px;
+     color:black
 }
 
