@@ -15,11 +15,15 @@
 }
  .bad{
      background-color: tomato;
-}
+} 
+ table{
+      margin: auto;
+ }
  td {
      border: 1px solid  black;
      border-radius: 10px;
      background-color: cornflowerblue;
+     text-align: center;
 }
  .info{
      background-color: rgba(0, 174, 255, 0.068);

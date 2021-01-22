@@ -36,7 +36,7 @@ let preCourse = [
       topic : "GitHub",
      },
      {
-      startAt :  new Date("2021-01-17:9:30"),k
+      startAt :  new Date("2021-01-17:9:30"),
       finishedAt : new Date("2021-01-17:21:30"),
       taskGiven : 3,
       taskFinished : 3,
@@ -70,7 +70,7 @@ let preCourse = [
       taskFinished : 1,
       topic : "Objects" ,
      },
-]
+];
 
 for (let day of preCourse) {
       day.totalTime = ((day.finishedAt.getHours())-
@@ -81,7 +81,7 @@ for (let day of preCourse) {
      day.startHours = day.startAt.getHours() + ":" + day.startAt.getMinutes();
      day.lastHours = day.finishedAt.getHours() + ":" + day.finishedAt.getMinutes();
      
-}
+};
 
 const headsOfTable = ["Started at:", "Finished at:",
  "Total time spent:", "Task given:", "Task finished:", "Task finished % :", "Topic:" ];
@@ -90,12 +90,12 @@ const headsOfTable = ["Started at:", "Finished at:",
      
   for (let title of headsOfTable) {
        document.write(`<th class = "info" >  ${title} </th>`)
-  }
+  };
 
       for (let i = 0; i<preCourse.length; i++) {
-           let classNameTime;
-           let classNameTask;
-           {if (preCourse[i].totalTime < 8) {
+               let classNameTime;
+               let classNameTask;
+          { if (preCourse[i].totalTime < 8) {
                classNameTime = 'little'
           } else if (preCourse[i].totalTime <= 10){
                 classNameTime = 'medium'
@@ -118,5 +118,5 @@ const headsOfTable = ["Started at:", "Finished at:",
            <td class = "${classNameTask}"> ${preCourse[i].taskFinishedPrecent} % </td>
            <td> ${preCourse[i].topic} </td> </tr>`)
           }        
-     }
-      document.write(`</table>`)
+     };
+ document.write(`</table>`);
