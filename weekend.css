@@ -1,8 +1,8 @@
 .little {
-     background-color: aqua;
+     background-color: rgb(255, 0, 234);
 }
 .medium {
-     background-color: yellowgreen;
+     background-color: rgb(168, 252, 0);
 }
 .alot {
      background-color: red;
@@ -13,7 +13,7 @@
 .almost {
      background-color: rgb(182, 205, 50);
 }
-.few {
+.bad{
      background-color: tomato;
 }
  td {

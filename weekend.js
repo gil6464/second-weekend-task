@@ -93,14 +93,22 @@ const headsOfTable = ["Started at:", "Finished at:",
  }
 
       for (let i = 0; i<preCourse.length; i++) {
+           let className;
+           {if (preCourse[i].totalTime < 8) {
+               className = 'little'
+           } else if ( preCourse[i].totalTime <= 10){
+                className = 'medium'
+           } else {
+                className = 'alot'
+           }
            document.write(`<tr>
            <td> ${preCourse[i].startHours} </td>
            <td> ${preCourse[i].lastHours}</td>
-           <td> ${preCourse[i].totalTime} </td>
+           <td class = "${className}"> ${preCourse[i].totalTime} </td>
            <td> ${preCourse[i].taskGiven}</td>
            <td> ${preCourse[i].taskFinished} </td>
            <td> ${preCourse[i].taskFinishedPrecent}</td>
            <td> ${preCourse[i].topic} </td> </tr>`)
           }        
-
+     }
  document.write(`</table>`)
