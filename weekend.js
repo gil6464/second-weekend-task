@@ -76,7 +76,7 @@ for (let day of preCourse) {
      day.totalTime = ((day.finishedAt.getHours())-
      (day.startAt.getHours()))
      
-     day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100) + "%"
+     day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100)
 
      day.startHours = day.startAt.getHours() + ":" + day.startAt.getMinutes();
      day.lastHours = day.finishedAt.getHours() + ":" + day.finishedAt.getMinutes();
@@ -93,21 +93,29 @@ const headsOfTable = ["Started at:", "Finished at:",
  }
 
       for (let i = 0; i<preCourse.length; i++) {
-           let className;
+           let classNameTime;
+           let classNameTask;
            {if (preCourse[i].totalTime < 8) {
-               className = 'little'
-           } else if ( preCourse[i].totalTime <= 10){
-                className = 'medium'
-           } else {
-                className = 'alot'
-           }
+               classNameTime = 'little'
+          } else if ( preCourse[i].totalTime <= 10){
+                classNameTime = 'medium'
+          } else {
+                classNameTime = 'alot'
+          }   
+           if (preCourse[i].taskFinishedPrecent < 80){
+               classNameTask = 'bad'
+          } else if (preCourse[i].taskFinishedPrecent <90){
+               classNameTask =  'almost'
+          } else {
+               classNameTask = 'good' 
+          }
            document.write(`<tr>
            <td> ${preCourse[i].startHours} </td>
            <td> ${preCourse[i].lastHours}</td>
-           <td class = "${className}"> ${preCourse[i].totalTime} </td>
+           <td class = "${classNameTime}"> ${preCourse[i].totalTime} </td>
            <td> ${preCourse[i].taskGiven}</td>
            <td> ${preCourse[i].taskFinished} </td>
-           <td> ${preCourse[i].taskFinishedPrecent}</td>
+           <td class = "${classNameTask}"> ${preCourse[i].taskFinishedPrecent} % </td>
            <td> ${preCourse[i].topic} </td> </tr>`)
           }        
      }
