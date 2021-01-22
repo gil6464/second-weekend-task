@@ -1,80 +1,80 @@
 "use strict"
 let preCourse = [
      {
-      startAt: new Date("2021-01-10:9:30"),
-      finishedAt: new Date("2021-01-10:21:30"),
-      taskGiven: 2,
-      taskFinished: 2,
-      topic: "Html" ,
+      startAt : new Date("2021-01-10:9:30"),
+      finishedAt : new Date("2021-01-10:21:30"),
+      taskGiven : 2,
+      taskFinished : 2,
+      topic : "Html" ,
      },
      {
-      startAt:  new Date("2021-01-11:9:30"),
-      finishedAt: new Date("2021-01-11:15:30"),
-      taskGiven: 3,
-      taskFinished: 3,
-      topic: "Css" ,
+      startAt :  new Date("2021-01-11:9:30"),
+      finishedAt : new Date("2021-01-11:15:30"),
+      taskGiven : 3,
+      taskFinished : 3,
+      topic : "Css" ,
      },
      { 
-      startAt:  new Date("2021-01-12:9:30"),
-      finishedAt: new Date("2021-01-12:16:30"),
-      taskGiven: 3,
-      taskFinished: 3,
-      topic: "Vscode" ,
+      startAt :  new Date("2021-01-12:9:30"),
+      finishedAt : new Date("2021-01-12:16:30"),
+      taskGiven : 3,
+      taskFinished : 3,
+      topic : "Vscode" ,
      },
      {
-      startAt:  new Date("2021-01-13:9:30"),
-      finishedAt: new Date("2021-01-13:18:30"),
-      taskGiven: 2,
-      taskFinished: 2,
-      topic: "Css" ,
+      startAt :  new Date("2021-01-13:9:30"),
+      finishedAt : new Date("2021-01-13:18:30"),
+      taskGiven : 2,
+      taskFinished : 2,
+      topic : "Css" ,
      },
      {
-      startAt:  new Date("2021-01-14:9:30"),
-      finishedAt: new Date("2021-01-14:23:30"),
-      taskGiven: 1,
-      taskFinished: 1,
-      topic: "GitHub",
+      startAt :  new Date("2021-01-14:9:30"),
+      finishedAt : new Date("2021-01-14:23:30"),
+      taskGiven : 1,
+      taskFinished : 1,
+      topic : "GitHub",
      },
      {
-      startAt:  new Date("2021-01-17:9:30"),
-      finishedAt: new Date("2021-01-17:21:30"),
-      taskGiven: 3,
-      taskFinished: 3,
-      topic: "JavaScript" ,
+      startAt :  new Date("2021-01-17:9:30"),k
+      finishedAt : new Date("2021-01-17:21:30"),
+      taskGiven : 3,
+      taskFinished : 3,
+      topic : "JavaScript" ,
      },
      {
-      startAt:  new Date("2021-01-18:9:30"),
-      finishedAt: new Date("2021-01-18:20:30"),
-      taskGiven: 6,
-      taskFinished: 5,
-      topic: "Loops" ,
+      startAt :  new Date("2021-01-18:9:30"),
+      finishedAt : new Date("2021-01-18:20:30"),
+      taskGiven : 6,
+      taskFinished : 5,
+      topic : "Loops" ,
      },
      {
-      startAt:  new Date("2021-01-19:9:30"),
-      finishedAt: new Date("2021-01-19:23:30"),
-      taskGiven: 12,
-      taskFinished: 8,
-      topic: "Arrays" ,
+      startAt :  new Date("2021-01-19:9:30"),
+      finishedAt : new Date("2021-01-19:23:30"),
+      taskGiven : 12,
+      taskFinished : 8,
+      topic : "Arrays" ,
      },
      {
-      startAt:  new Date("2021-01-20:9:30"),
-      finishedAt: new Date("2021-01-20:23:30"),
-      taskGiven: 6,
-      taskFinished: 5,
-      topic: "Conditions" ,
+      startAt :  new Date("2021-01-20:9:30"),
+      finishedAt : new Date("2021-01-20:23:30"),
+      taskGiven : 6,
+      taskFinished : 5,
+      topic : "Conditions" ,
      },
      {
-      startAt:  new Date("2021-01-21:9:30"),
-      finishedAt: new Date("2021-01-10:19:30"),
-      taskGiven: 1,
-      taskFinished: 1,
-      topic: "Objects" ,
+      startAt :  new Date("2021-01-21:9:30"),
+      finishedAt : new Date("2021-01-10:19:30"),
+      taskGiven : 1,
+      taskFinished : 1,
+      topic : "Objects" ,
      },
 ]
 
 for (let day of preCourse) {
-     day.totalTime = ((day.finishedAt.getHours())-
-     (day.startAt.getHours()))
+      day.totalTime = ((day.finishedAt.getHours())-
+      (day.startAt.getHours()))
      
      day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100)
 
@@ -86,37 +86,37 @@ for (let day of preCourse) {
 const headsOfTable = ["Started at:", "Finished at:",
  "Total time spent:", "Task given:", "Task finished:", "Task finished % :", "Topic:" ];
      
- document.write(`<table>`)
+  document.write(`<table>`)
      
- for (let title of headsOfTable) {
-      document.write(`<th class = "info" >  ${title} </th>`)
- }
+  for (let title of headsOfTable) {
+       document.write(`<th class = "info" >  ${title} </th>`)
+  }
 
       for (let i = 0; i<preCourse.length; i++) {
            let classNameTime;
            let classNameTask;
            {if (preCourse[i].totalTime < 8) {
                classNameTime = 'little'
-          } else if ( preCourse[i].totalTime <= 10){
+          } else if (preCourse[i].totalTime <= 10){
                 classNameTime = 'medium'
           } else {
                 classNameTime = 'alot'
           }   
            if (preCourse[i].taskFinishedPrecent < 80){
                classNameTask = 'bad'
-          } else if (preCourse[i].taskFinishedPrecent <90){
+          } else if (preCourse[i].taskFinishedPrecent < 90){
                classNameTask =  'almost'
           } else {
                classNameTask = 'good' 
           }
            document.write(`<tr>
            <td> ${preCourse[i].startHours} </td>
-           <td> ${preCourse[i].lastHours}</td>
+           <td> ${preCourse[i].lastHours} </td>
            <td class = "${classNameTime}"> ${preCourse[i].totalTime} </td>
-           <td> ${preCourse[i].taskGiven}</td>
+           <td> ${preCourse[i].taskGiven} </td>
            <td> ${preCourse[i].taskFinished} </td>
            <td class = "${classNameTask}"> ${preCourse[i].taskFinishedPrecent} % </td>
            <td> ${preCourse[i].topic} </td> </tr>`)
           }        
      }
- document.write(`</table>`)
+      document.write(`</table>`)

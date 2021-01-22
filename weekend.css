@@ -1,10 +1,10 @@
-.little {
+ .little {
      background-color: rgb(255, 0, 234);
 }
-.medium {
+ .medium {
      background-color: rgb(168, 252, 0);
 }
-.alot {
+ .alot {
      background-color: red;
 }
  .good {
@@ -21,7 +21,7 @@
      border-radius: 10px;
      background-color: cornflowerblue;
 }
-.info{
+ .info{
      background-color: rgba(0, 174, 255, 0.068);
      border: 1px solid black;
      border-radius: 10px;
