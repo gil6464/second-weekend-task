@@ -2,8 +2,8 @@
 let preCourse = [
      {
       startAt : new Date("2021-01-10:9:30"),
-      finishedAt : new Date("2021-01-10:21:30"),
-      taskGiven : 2,
+      finishedAt : new Date("2021-01-10:21:45"),
+      taskGiven : 3,
       taskFinished : 2,
       topic : "Html" ,
      },
@@ -16,8 +16,8 @@ let preCourse = [
      },
      { 
       startAt :  new Date("2021-01-12:9:30"),
-      finishedAt : new Date("2021-01-12:16:30"),
-      taskGiven : 3,
+      finishedAt : new Date("2021-01-12:16:15"),
+      taskGiven : 4,
       taskFinished : 3,
       topic : "Vscode" ,
      },
@@ -30,7 +30,7 @@ let preCourse = [
      },
      {
       startAt :  new Date("2021-01-14:9:30"),
-      finishedAt : new Date("2021-01-14:23:30"),
+      finishedAt : new Date("2021-01-14:23:45"),
       taskGiven : 1,
       taskFinished : 1,
       topic : "GitHub",
@@ -51,7 +51,7 @@ let preCourse = [
      },
      {
       startAt :  new Date("2021-01-19:9:30"),
-      finishedAt : new Date("2021-01-19:23:30"),
+      finishedAt : new Date("2021-01-19:23:15"),
       taskGiven : 12,
       taskFinished : 8,
       topic : "Arrays" ,
@@ -59,28 +59,28 @@ let preCourse = [
      {
       startAt :  new Date("2021-01-20:9:30"),
       finishedAt : new Date("2021-01-20:23:30"),
-      taskGiven : 6,
+      taskGiven : 7,
       taskFinished : 5,
       topic : "Conditions" ,
      },
      {
       startAt :  new Date("2021-01-21:9:30"),
-      finishedAt : new Date("2021-01-10:19:30"),
-      taskGiven : 1,
-      taskFinished : 1,
+      finishedAt : new Date("2021-01-21:19:00"),
+      taskGiven : 3,
+      taskFinished : 2,
       topic : "Objects" ,
      },
 ];
 
 for (let day of preCourse) {
-      day.totalTime = ((day.finishedAt.getHours())-
-      (day.startAt.getHours()))
-     
-     day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100)
+          day.startAtHour = day.startAt.toLocaleTimeString([]
+           , {hour : '2-digit', minute:'2-digit'});
+          day.finishedAtHour = day.finishedAt.toLocaleTimeString([]
+          ,  {hour : '2-digit', minute:'2-digit'});
 
-     day.startHours = day.startAt.getHours() + ":" + day.startAt.getMinutes();
-     day.lastHours = day.finishedAt.getHours() + ":" + day.finishedAt.getMinutes();
+          day.totalTime = Math.abs(day.finishedAt - day.startAt) / 36e5;
      
+          day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100)  
 };
 
 const headsOfTable = ["Started at:", "Finished at:",
@@ -92,31 +92,31 @@ const headsOfTable = ["Started at:", "Finished at:",
        document.write(`<th class = "info" >  ${title} </th>`)
   };
 
-      for (let i = 0; i<preCourse.length; i++) {
+      for (let day of preCourse) {
                let classNameTime;
                let classNameTask;
-          { if (preCourse[i].totalTime < 8) {
+          { if (day.totalTime < 8) {
                classNameTime = 'little'
-          } else if (preCourse[i].totalTime <= 10){
+          } else if (day.totalTime <= 10){
                 classNameTime = 'medium'
           } else {
                 classNameTime = 'alot'
           }   
-           if (preCourse[i].taskFinishedPrecent < 80){
+           if (day.taskFinishedPrecent < 75){
                classNameTask = 'bad'
-          } else if (preCourse[i].taskFinishedPrecent < 90){
+          } else if (day.taskFinishedPrecent < 90){
                classNameTask =  'almost'
           } else {
                classNameTask = 'good' 
           }
            document.write(`<tr>
-           <td> ${preCourse[i].startHours} </td>
-           <td> ${preCourse[i].lastHours} </td>
-           <td class = "${classNameTime}"> ${preCourse[i].totalTime} </td>
-           <td> ${preCourse[i].taskGiven} </td>
-           <td> ${preCourse[i].taskFinished} </td>
-           <td class = "${classNameTask}"> ${preCourse[i].taskFinishedPrecent} % </td>
-           <td> ${preCourse[i].topic} </td> </tr>`)
+           <td> ${day.startAtHour} </td>
+           <td> ${day.finishedAtHour} </td>
+           <td class = "${classNameTime}"> ${day.totalTime} </td>
+           <td> ${day.taskGiven} </td>
+           <td> ${day.taskFinished} </td>
+           <td class = "${classNameTask}"> ${day.taskFinishedPrecent} % </td>
+           <td> ${day.topic} </td> </tr>`)
           }        
      };
  document.write(`</table>`);
