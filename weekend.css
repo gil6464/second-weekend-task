@@ -1,22 +1,22 @@
  .little {
      background-color: rgb(255, 0, 234);
-}
+ }
  .medium {
      background-color: rgb(168, 252, 0);
-}
+ }
  .alot {
      background-color: red;
-}
+ }
  .good {
      background-color: springgreen;
-}
+ }
  .almost {
      background-color: rgb(182, 205, 50);
-}
- .bad{
+ }
+ .bad {
      background-color: tomato;
-} 
- table{
+ } 
+ table {
       margin: auto;
  }
  td {
@@ -24,11 +24,11 @@
      border-radius: 10px;
      background-color: cornflowerblue;
      text-align: center;
-}
- .info{
+ }
+ .info {
      background-color: rgba(0, 174, 255, 0.068);
      border: 1px solid black;
      border-radius: 10px;
-     color:black
-}
+     color:black;
+ }
 

@@ -1,4 +1,3 @@
-"use strict"
 let preCourse = [
      {
       startAt : new Date("2021-01-10:9:30"),
@@ -73,18 +72,20 @@ let preCourse = [
 ];
 
 for (let day of preCourse) {
-          day.startAtHour = day.startAt.toLocaleTimeString([]
-           , {hour : '2-digit', minute:'2-digit'});
-          day.finishedAtHour = day.finishedAt.toLocaleTimeString([]
-          ,  {hour : '2-digit', minute:'2-digit'});
+       day.startAtHour = day.startAt.toLocaleTimeString([]
+       , {hour : '2-digit', minute:'2-digit'});
+       day.finishedAtHour = day.finishedAt.toLocaleTimeString([]
+       , {hour : '2-digit', minute:'2-digit'});
 
-          day.totalTime = Math.abs(day.finishedAt - day.startAt) / 36e5;
+       day.totalTime = Math.abs(day.finishedAt - day.startAt) / 36e5;
      
-          day.taskFinishedPrecent = Math.floor((day.taskFinished / day.taskGiven) * 100)  
+       day.taskFinishedPrecent = 
+       Math.floor((day.taskFinished / day.taskGiven) * 100)  
 };
 
-const headsOfTable = ["Started at:", "Finished at:",
- "Total time spent:", "Task given:", "Task finished:", "Task finished % :", "Topic:" ];
+ const headsOfTable = ["Started at:", "Finished at:",
+  "Total time spent:", "Task given:", "Task finished:",
+  "Task finished % :", "Topic:" ];
      
   document.write(`<table>`)
      
@@ -92,31 +93,32 @@ const headsOfTable = ["Started at:", "Finished at:",
        document.write(`<th class = "info" >  ${title} </th>`)
   };
 
-      for (let day of preCourse) {
-               let classNameTime;
-               let classNameTask;
-          { if (day.totalTime < 8) {
-               classNameTime = 'little'
-          } else if (day.totalTime <= 10){
-                classNameTime = 'medium'
-          } else {
-                classNameTime = 'alot'
-          }   
-           if (day.taskFinishedPrecent < 75){
-               classNameTask = 'bad'
-          } else if (day.taskFinishedPrecent < 90){
-               classNameTask =  'almost'
-          } else {
-               classNameTask = 'good' 
-          }
-           document.write(`<tr>
-           <td> ${day.startAtHour} </td>
-           <td> ${day.finishedAtHour} </td>
-           <td class = "${classNameTime}"> ${day.totalTime} </td>
-           <td> ${day.taskGiven} </td>
-           <td> ${day.taskFinished} </td>
-           <td class = "${classNameTask}"> ${day.taskFinishedPrecent} % </td>
-           <td> ${day.topic} </td> </tr>`)
-          }        
-     };
+  for (let day of preCourse) {
+        let classNameTime;
+        let classNameTask;
+     { if (day.totalTime < 8) {
+        classNameTime = 'little'
+     } else if (day.totalTime <= 10) {
+        classNameTime = 'medium'
+     } else {
+        classNameTime = 'alot'
+     }   
+       if (day.taskFinishedPrecent < 75) {
+        classNameTask = 'bad'
+     } else if (day.taskFinishedPrecent < 90) {
+        classNameTask =  'almost'
+     } else {
+        classNameTask = 'good' 
+     }
+     document.write(`<tr>
+      <td> ${day.startAtHour} </td>
+      <td> ${day.finishedAtHour} </td>
+      <td class = "${classNameTime}"> ${day.totalTime} </td>
+      <td> ${day.taskGiven} </td>
+      <td> ${day.taskFinished} </td>
+      <td class = "${classNameTask}"> ${day.taskFinishedPrecent} % </td>
+      <td> ${day.topic} </td> </tr>`)
+     }        
+  };
+
  document.write(`</table>`);
