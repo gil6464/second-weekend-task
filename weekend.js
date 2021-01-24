@@ -83,37 +83,32 @@ for (let day of preCourse) {
        Math.floor((day.taskFinished / day.taskGiven) * 100)  
 };
 
- const headsOfTable = ["Started at:", "Finished at:",
-  "Total time spent:", "Task given:", "Task finished:",
-  "Task finished % :", "Topic:" ];
+     const headsOfTable = ["Started at:", "Finished at:",
+    "Total time spent:", "Task given:", "Task finished:",
+    "Task finished % :", "Topic:" ];
      
-  let body = document.body;
-  const heading = document.createElement("h1");
-  heading.textContent = "This is Dom manipulation task:"
-  body.append(heading);
+     let body = document.body;
+      const heading = document.createElement("h1");
+      heading.textContent = "This is Dom manipulation task:"
+      body.append(heading);
 
- let table = document.createElement("table");
+     let table = document.createElement("table");
      
-  for (let title of headsOfTable) {
-       let headsOfTable = document.createElement("th")
+     for (let title of headsOfTable) {
+
+       let headsOfTable = document.createElement("th"); 
        headsOfTable.textContent = title;
-       headsOfTable.className = "info"
-       table.append(headsOfTable)
-  };
+       headsOfTable.className = "info";
 
-  body.append(table);
+       table.append(headsOfTable);
+       body.append(table);
+     };
 
-  for (let day of preCourse) {    
+
+   for (let day of preCourse) {    
    
-      //  if (day.taskFinishedPrecent < 75) {
-      //   day.taskFinishedPrecent.className = 'bad'
-   //   } else if (day.taskFinishedPrecent < 90) {
-      // day.taskFinishedPrecent.className =  'almost'
-   //   } else {
-      // day.taskFinishedPrecent.className = 'good' 
-   //   }
-      let rows = document.createElement("tr");
-      table.append(rows);
+       let rows = document.createElement("tr");
+         table.append(rows);
 
        let startHour = document.createElement("td");
          startHour.textContent = day.startAtHour; 
@@ -125,39 +120,38 @@ for (let day of preCourse) {
 
          let totalHours = document.createElement("td");
          totalHours.textContent = day.totalTime;
-         console.log(totalHours);
 
-         if (day.totalTime < 8) {
-            totalHours.className = "little";
-         } else if (day.totalTime <= 10) {
-            totalHours.className = "medium";
-         } else {
-            totalHours.className = "alot";  
-         }
+          if (day.totalTime < 8) {
+             totalHours.className = "little";
+          } else if (day.totalTime <= 10) {
+             totalHours.className = "medium";
+          } else {
+             totalHours.className = "alot";  
+          };
          table.append(totalHours);
 
        let tasks = document.createElement ("td");
          tasks.textContent = day.taskGiven;
          table.append(tasks);
 
-      let finishTask = document.createElement("td");
-        finishTask.textContent = day.taskFinished;
-        table.append(finishTask);
+       let finishTask = document.createElement("td");
+         finishTask.textContent = day.taskFinished;
+         table.append(finishTask);
 
        let finishTaskPrecent = document.createElement("td");
-       finishTaskPrecent.textContent = day.taskFinishedPrecent;
-         if (day.taskFinishedPrecent < 75) {
+         finishTaskPrecent.textContent = day.taskFinishedPrecent;
+
+          if (day.taskFinishedPrecent < 75) {
             finishTaskPrecent.className = "bad";
           } else if (day.taskFinishedPrecent < 90) {
             finishTaskPrecent.className = "almost";
-         } else {
-           finishTaskPrecent.className = "good";
-         }
+          } else {
+            finishTaskPrecent.className = "good";
+          };
          table.append(finishTaskPrecent);
 
        let topicData = document.createElement("td");
          topicData.textContent = day.topic;
          table.append(topicData);
-   }
-   // }
+   };
   
