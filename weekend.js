@@ -103,32 +103,54 @@ for (let day of preCourse) {
 
   body.append(table);
 
-//   for (let day of preCourse) {
-      //   let classNameTime;
-      //   let classNameTask;
-   //   { if (day.totalTime < 8) {
-      //   classNameTime = 'little'
-   //   } else if (day.totalTime <= 10) {
-      //   classNameTime = 'medium'
-   //   } else {
-      //   classNameTime = 'alot'
-   //   }   
-      //  if (day.taskFinishedPrecent < 75) {
-      //   classNameTask = 'bad'
-   //   } else if (day.taskFinishedPrecent < 90) {
-      //   classNameTask =  'almost'
-   //   } else {
-      //   classNameTask = 'good' 
-   //   }
-   //   document.write(`<tr>
-      // <td> ${day.startAtHour} </td>
-      // <td> ${day.finishedAtHour} </td>
-      // <td class = "${classNameTime}"> ${day.totalTime} </td>
-      // <td> ${day.taskGiven} </td>
-      // <td> ${day.taskFinished} </td>
-      // <td class = "${classNameTask}"> ${day.taskFinishedPrecent} % </td>
-      // <td> ${day.topic} </td> </tr>`)
-   //   }        
-//   };
+  for (let day of preCourse) {    
+   
+       if (day.taskFinishedPrecent < 75) {
+        day.taskFinishedPrecent.className = 'bad'
+     } else if (day.taskFinishedPrecent < 90) {
+      day.taskFinishedPrecent.className =  'almost'
+     } else {
+      day.taskFinishedPrecent.className = 'good' 
+     }
+      let rows = document.createElement("tr");
+      table.append(rows);
 
- document.write(`</table>`);
+       let startHour = document.createElement("td");
+         startHour.textContent = day.startAtHour; 
+         table.append(startHour);
+
+       let endHour = document.createElement("td");
+         endHour.textContent = day.finishedAtHour;
+         table.append(endHour);
+
+         let totalHours = document.createElement("td");
+         totalHours.textContent = day.totalTime;
+         console.log(totalHours);
+
+         if (day.totalTime < 8) {
+            totalHours.classList.add("little");
+         } else if (day.totalTime <= 10) {
+            totalHours.classList.add("medium");
+         } else {
+            totalHours.classList.add("alot");  
+         }
+         table.append(totalHours);
+
+       let tasks = document.createElement ("td");
+         tasks.textContent = day.taskGiven;
+         table.append(tasks);
+
+      let finishTask = document.createElement("td");
+        finishTask.textContent = day.taskFinished;
+        table.append(finishTask);
+
+       let finishTaskPrecent = document.createElement("td");
+         finishTaskPrecent.textContent = day.taskFinishedPrecent +"%";
+         table.append(finishTaskPrecent);
+
+       let topicData = document.createElement("td");
+         topicData.textContent = day.topic;
+         table.append(topicData);
+   }
+   // }
+  
