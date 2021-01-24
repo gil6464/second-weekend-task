@@ -96,7 +96,8 @@ for (let day of preCourse) {
      
   for (let title of headsOfTable) {
        let headsOfTable = document.createElement("th")
-       headsOfTable.textContent = `${title}`;
+       headsOfTable.textContent = title;
+       headsOfTable.className = "info"
        table.append(headsOfTable)
   };
 
