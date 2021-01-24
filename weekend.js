@@ -105,13 +105,13 @@ for (let day of preCourse) {
 
   for (let day of preCourse) {    
    
-       if (day.taskFinishedPrecent < 75) {
-        day.taskFinishedPrecent.className = 'bad'
-     } else if (day.taskFinishedPrecent < 90) {
-      day.taskFinishedPrecent.className =  'almost'
-     } else {
-      day.taskFinishedPrecent.className = 'good' 
-     }
+      //  if (day.taskFinishedPrecent < 75) {
+      //   day.taskFinishedPrecent.className = 'bad'
+   //   } else if (day.taskFinishedPrecent < 90) {
+      // day.taskFinishedPrecent.className =  'almost'
+   //   } else {
+      // day.taskFinishedPrecent.className = 'good' 
+   //   }
       let rows = document.createElement("tr");
       table.append(rows);
 
@@ -128,11 +128,11 @@ for (let day of preCourse) {
          console.log(totalHours);
 
          if (day.totalTime < 8) {
-            totalHours.classList.add("little");
+            totalHours.className = "little";
          } else if (day.totalTime <= 10) {
-            totalHours.classList.add("medium");
+            totalHours.className = "medium";
          } else {
-            totalHours.classList.add("alot");  
+            totalHours.className = "alot";  
          }
          table.append(totalHours);
 
@@ -145,7 +145,14 @@ for (let day of preCourse) {
         table.append(finishTask);
 
        let finishTaskPrecent = document.createElement("td");
-         finishTaskPrecent.textContent = day.taskFinishedPrecent +"%";
+       finishTaskPrecent.textContent = day.taskFinishedPrecent;
+         if (day.taskFinishedPrecent < 75) {
+            finishTaskPrecent.className = "bad";
+          } else if (day.taskFinishedPrecent < 90) {
+            finishTaskPrecent.className = "almost";
+         } else {
+           finishTaskPrecent.className = "good";
+         }
          table.append(finishTaskPrecent);
 
        let topicData = document.createElement("td");
